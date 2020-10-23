@@ -1,0 +1,14 @@
+#find all distinct combinations of given length 
+def dc(a,n,pre):
+    if n==0:
+        print(pre)
+        return
+    for i in a:
+        newpre=list(pre)
+        print(pre,newpre)
+        newpre.append(i)
+        print(i)
+        dc(a,n-1,newpre)
+n=int(input())
+array=list(map(int,input().split()))
+dc(array,n,[])
