@@ -1,0 +1,15 @@
+#Function to find all N-digit numbers with sum of digits equal to given sum
+def gsum(n,sum,res=''):
+    if sum>0 and n>0:
+        d=ord('0')
+        if res=='':
+            d=ord('1')
+        while d<ord('9'):
+            gsum(n-1,sum-(d-ord('0')),res+chr(d))
+            d+=1
+    if sum==0 and n==0:
+        print(res,end=',')
+        return
+n=int(input())
+sum=int(input())
+gsum(n,sum)
