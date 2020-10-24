@@ -1,0 +1,30 @@
+def rd(s,res):
+    #print('check call')
+    if len(s)==0:
+        print(res)
+        return
+    if len(s)==1:
+        if res and res[-1]==s:
+            print(res[:len(res)-2])
+            return
+        else:
+            print(res+s)
+            return 
+    if len(s)>1:
+        if s[0]!=s[1]:
+            if res and res[-1]==s:
+                res=res[:len(res)-2]
+                #print(res,'check')
+            else:res+=s[0]
+            s=s[1:]
+        if s[0]==s[1]:
+            while len(s)>1 and s[0]==s[1]:
+                s=s[1:]
+                #print(s,'check2')
+            s=s[1:]
+            #print(s,'3')
+    #print(res,'check res')
+    rd(s,res)
+for _ in range(int(input())):
+    s=input()
+    rd(s,'')
