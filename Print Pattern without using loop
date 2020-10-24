@@ -1,0 +1,15 @@
+def printpattern(i,n,f):
+    print(i,end=" ")
+    if i>0 and f:
+        printpattern(i-5,n,f)
+    elif i==n:
+        return
+    elif i>0:
+        printpattern(i+5,n,f)
+    else:
+        f=False
+        printpattern(i+5,n,f)
+for _ in range(int(input())):
+    n=int(input())
+    printpattern(n,n,True)
+    print()
